@@ -48,6 +48,11 @@ class Users implements UserInterface
      */
     private $posts;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_moderator;
+
     public function __construct()
     {
         $this->posts = new ArrayCollection();
@@ -169,6 +174,18 @@ class Users implements UserInterface
                 $post->setCreator(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getIsModerator(): ?bool
+    {
+        return $this->is_moderator;
+    }
+
+    public function setIsModerator(bool $is_moderator): self
+    {
+        $this->is_moderator = $is_moderator;
 
         return $this;
     }

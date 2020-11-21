@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PostsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=PostsRepository::class)
@@ -32,6 +33,12 @@ class Posts
      * @ORM\JoinColumn(nullable=false)
      */
     private $creator;
+
+    /**
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
+     */
+    private $created_at;
 
     public function getId(): ?int
     {
@@ -73,4 +80,10 @@ class Posts
 
         return $this;
     }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
 }

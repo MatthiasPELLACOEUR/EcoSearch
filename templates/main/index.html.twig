@@ -9,18 +9,9 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
     {% for message in app.flashes('success') %}
         <div class="green accent-4" role="alert">{{ message }}</div>
     {% endfor %}
-
-    Register <a href="/index.php{{path('app_register')}}">here</a>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/laragon/www/EcoSearchV2/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/laragon/www/EcoSearchV2/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
-    </ul>
 </div>
 {% endblock %}

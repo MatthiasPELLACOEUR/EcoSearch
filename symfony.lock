@@ -1,4 +1,19 @@
 {
+    "antishov/doctrine-extensions-bundle": {
+        "version": "1.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.4",
+            "ref": "6c1ceb662f8997085f739cd089bfbef67f245983"
+        },
+        "files": [
+            "./config/packages/stof_doctrine_extensions.yaml"
+        ]
+    },
+    "behat/transliterator": {
+        "version": "v1.3.0"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.1"
     },
@@ -75,11 +90,17 @@
     "doctrine/persistence": {
         "version": "2.1.0"
     },
+    "doctrine/reflection": {
+        "version": "1.2.2"
+    },
     "doctrine/sql-formatter": {
         "version": "1.1.1"
     },
     "egulias/email-validator": {
         "version": "2.1.24"
+    },
+    "gedmo/doctrine-extensions": {
+        "version": "v2.4.42"
     },
     "monolog/monolog": {
         "version": "2.1.1"
