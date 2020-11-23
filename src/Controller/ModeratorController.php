@@ -44,7 +44,7 @@ class ModeratorController extends AbstractController
         }
 
         return $this->render('moderator/posts/create.html.twig', [
-            'form' =>$form->createView()
+            'postForm' =>$form->createView()
         ]);
    }
 }

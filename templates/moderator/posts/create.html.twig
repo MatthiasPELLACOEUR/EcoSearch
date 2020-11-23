@@ -3,6 +3,24 @@
 {% block title %}Create a Post{% endblock %}
 
 {% block body %}
-    <h1>Create a post</h1>
-    {{ form(form)}}
+<section class="post-creation">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <h1>Create a post</h1>
+                {{ form_start(postForm, { 'attr' : { 'method' : 'post'} })}}
+
+                    <label for="posts[title]">Title</label>
+                    {{form_widget(postForm.title, { 'attr' : { 'class' : 'form-control'} })}}
+
+                    <label for="posts[content]">Content</label>
+                    {{form_widget(postForm.content, { 'attr' : { 'class' : 'form-control'} })}}
+
+                    {{form_widget(postForm.create, { 'attr' : { 'class' : 'btn btn-primary float-right zozo'} })}}
+
+                {{ form_end(postForm) }}
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

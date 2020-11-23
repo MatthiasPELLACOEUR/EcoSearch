@@ -2,47 +2,97 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="{{absolute_url(asset("/assets/css/materialize.min.css"))}}" >
-        <link rel="stylesheet" href="{{absolute_url(asset("/assets/css/styles.css"))}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="keywords" content="Bootstrap, Landing page, Template, Business, Service">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="author" content="Grayrids"><title>
+        {% block title %}Welcome!{% endblock %}</title>
+            <!--====== Favicon Icon ======-->
+        <link rel="shortcut icon" href="{{absolute_url(asset("/assets/img/2.png"))}}" type="image/png">
+        <!-- Bootstrap CSS -->
+        <script src="https://kit.fontawesome.com/6dfb1d6721.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{{absolute_url(asset("/assets/css/bootstrap.min.css"))}}">
+        <link rel="stylesheet" href="{{absolute_url(asset("/assets/css/animate.css"))}}">
+        <link rel="stylesheet" href="{{absolute_url(asset("/assets/css/LineIcons.css"))}}">
+        <link rel="stylesheet" href="{{absolute_url(asset("/assets/css/owl.carousel.css"))}}">
+        <link rel="stylesheet" href="{{absolute_url(asset("/assets/css/owl.theme.css"))}}">
+        <link rel="stylesheet" href="{{absolute_url(asset("/assets/css/magnific-popup.css"))}}">
+        <link rel="stylesheet" href="{{absolute_url(asset("/assets/css/nivo-lightbox.css"))}}">
+        <link rel="stylesheet" href="{{absolute_url(asset("/assets/css/main.css"))}}">    
+        <link rel="stylesheet" href="{{absolute_url(asset("/assets/css/responsive.css"))}}">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <nav class="nav-extended">
-            <div class="nav-wrapper bg-main padding">
-            <a class="brand-logo" href="{{path('main')}}">EcoSearch</a>
-            {# <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> #}
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                {% if app.user %}
-                 BG sale shlag
-                 {% else %}
-                <li><a href=" {{path('app_login')}} ">Log In</a></li>
-                <li><a href="{{path('app_register')}}">Register</a></li>
-                {% endif %}
+    <!-- Header Section Start -->
+    <header id="home" class="hero-area">
+      <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
+        <div class="container">
+          <a href=" {{path('main')}} " class="navbar-brand title-logo"><img src="{{absolute_url(asset("/assets/img/2.png"))}}" alt=""> EcoSearch</a>       
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lni-menu"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href=" {{path('main')}}">Actualities</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href=" ">My Recycle Center</a>
+              </li>       
+              
+              <li class="nav-item">
+                <a class="nav-link page-scroll" href="{{path('main')}}#contact">Contact</a>
+              </li> 
+              {% if app.user %}
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href=" path('user') ">My Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path('app_logout')}} ">
+                        <i class="fas fa-sign-out-alt"></i>Log out
+                    </a>
+                </li>
+              {% else %}
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href=" {{path('app_login')}} ">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href=" {{path('app_register')}} ">Register</a>
+                </li> 
+              {% endif %}
             </ul>
-            </div>
-            <div class="nav-content">
-                <ul class="tabs bg-main test">
-                    <li class="bg-main tab"><a class="active" href="{{path('main')}}">Actualities</a></li>
-                    <li class="bg-main tab"><a href="">My Recycle Center</a></li>
-                    {# <li class="bg-main tab"><a href=" {{path('users_show', {'id': user.id})}} ">My Account</a></li> #}
-                </ul>
-            </div>
-        </nav>
-
-        {# <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">Log In</a></li>
-            <li><a href="badges.html">Register</a></li>
-        </ul> #}
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Header Section End --> 
 
         {% block body %}{% endblock %}
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <script src="{{absolute_url(asset('assets/js/materialize.min.js'))}}"></script>
-        <script src="{{absolute_url(asset('assets/js/scripts.js'))}}"></script>
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+      <i class="lni-chevron-up"></i>
+    </a> 
+
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader" id="loader-1"></div>
+    </div>
+    <!-- End Preloader -->
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="{{absolute_url(asset("/assets/js/jquery-min.js"))}}"></script>
+    <script src="{{absolute_url(asset("/assets/js/popper.min.js"))}}"></script>
+    <script src="{{absolute_url(asset("/assets/js/bootstrap.min.js"))}}"></script>
+    <script src="{{absolute_url(asset("/assets/js/owl.carousel.js"))}}"></script>      
+    <script src="{{absolute_url(asset("/assets/js/jquery.nav.js"))}}"></script>    
+    <script src="{{absolute_url(asset("/assets/js/scrolling-nav.js"))}}"></script>    
+    <script src="{{absolute_url(asset("/assets/js/jquery.easing.min.js"))}}"></script>     
+    <script src="{{absolute_url(asset("/assets/js/nivo-lightbox.js"))}}"></script>     
+    <script src="{{absolute_url(asset("/assets/js/jquery.magnific-popup.min.js"))}}"></script>      
+    <script src="{{absolute_url(asset("/assets/js/main.js"))}}"></script>
+    
 
         {% block javascripts %}
         {% endblock %}

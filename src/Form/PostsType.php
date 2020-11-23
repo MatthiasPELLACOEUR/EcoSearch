@@ -17,7 +17,6 @@ class PostsType extends AbstractType
         $builder
             ->add('title')
             ->add('content', TextareaType::class)
-            // ->add('created_at')
             // ->add('creator')
             ->add('create', SubmitType::class)
         ;
