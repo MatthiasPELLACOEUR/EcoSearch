@@ -35,8 +35,6 @@ class PostsController extends AbstractController
         // On récupère le nombre total de posts
         $total = $postsRepo->getTotalPosts();
 
-        // $nbPages = (int) \ceil($counts/$max);
-
         foreach($posts as $i => $post) {
             $posts[$i]->setContent(substr($post->getContent(), 0, 255));
         }

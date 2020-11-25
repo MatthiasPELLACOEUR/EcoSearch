@@ -27,7 +27,7 @@ html {
 p {
   font-size: 14px;
   color: black;
-  line-height: 26px;
+  /* line-height: 10px; */
   margin-bottom: 0; }
 
 a:hover, a:focus {

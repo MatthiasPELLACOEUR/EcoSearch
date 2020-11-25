@@ -3,24 +3,32 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block body %}
+{% for flashError in app.flashes('message') %}
+    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+{% endfor %}
+
 <section class="contact-form">
     <div class="container">
         <div class="row">
             <div class="col-6 offset-3">
                 <h1>Contact us !</h1>
-                {{form_start(contactForm, { 'attr' : {'method' : 'post'} })}}
+                {{form_start(form, { 'attr' : {'method' : 'post'} })}}
 
                 <label class="label" for="contact[name]">Your name</label>
-                {{form_widget(contactForm.name, { 'attr' : { 'class' : 'form-control'} })}}
+                {{form_widget(form.name, { 'attr' : { 'class' : 'form-control'} })}}
 
                 <label class="label" for="contact[from]">Your email</label>
-                {{form_widget(contactForm.from, { 'attr' : { 'class' : 'form-control'} })}}
+                {{form_widget(form.email, { 'attr' : { 'class' : 'form-control'} })}}
+
+                <label class="label" for="contact[subject]">Subject</label>
+                {{form_widget(form.subject, { 'attr' : { 'class' : 'form-control'} })}}
+
 
                 <label class="label" for="contact[message]">Your message</label>
-                {{form_widget(contactForm.message, { 'attr' : { 'class' : 'form-control'} })}}
+                {{form_widget(form.message, { 'attr' : { 'class' : 'form-control'} })}}
                 <input type="submit" class="btn btn-primary float-right zozo" value="Send" />
 
-                {{form_end(contactForm)}}
+                {{form_end(form)}}
             </div>
         </div>
     </div>
