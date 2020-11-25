@@ -3,16 +3,26 @@
 {% block title %}Hello ContactController!{% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="row">
-        <div class="col 6 offset-3">
-            {{form_start(contactForm)}}
-            {{form_widget(contactForm)}}
+<section class="contact-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <h1>Contact us !</h1>
+                {{form_start(contactForm, { 'attr' : {'method' : 'post'} })}}
 
-            <input type="submit" value="Send" />
+                <label class="label" for="contact[name]">Your name</label>
+                {{form_widget(contactForm.name, { 'attr' : { 'class' : 'form-control'} })}}
 
-            {{form_end(contactForm)}}
+                <label class="label" for="contact[from]">Your email</label>
+                {{form_widget(contactForm.from, { 'attr' : { 'class' : 'form-control'} })}}
+
+                <label class="label" for="contact[message]">Your message</label>
+                {{form_widget(contactForm.message, { 'attr' : { 'class' : 'form-control'} })}}
+                <input type="submit" class="btn btn-primary float-right zozo" value="Send" />
+
+                {{form_end(contactForm)}}
+            </div>
         </div>
     </div>
-</div>
+</section>
 {% endblock %}

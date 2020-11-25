@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous nos articles - Ecosearch{% endblock %}
+
+{% block body %}
+    <section class="actualities">
+        <div class="container">
+            <div class="row">
+                <h2 class="col-9 offset-2 text-center">Toutes nos actualités</h2>
+                {% for post in posts %}
+                    <div class="col-5 mb-3 offset-1">
+                        <div class="card">
+                        {# <img src="{{ absolute_url(asset('assets/img/contact/01.png')) }}" class="card-img-top" alt="..."> #}
+                        <div class="card-body">
+                            <h6 class="card-title"> {{ post.title }} </h6>
+                            <p class="card-text"> {{ post.content }}... <p>
+                            <a href="#">lire plus</a>
+                        </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <!-- PAGINATION -->
+            <nav class="paginator" aria-label="...">
+                {% set pages = (total / limit)|round(0, 'ceil') %}
+                <ul class="pagination justify-content-center">
+                    <li class="page-item {{ (page == 1) ? 'disabled' : '' }}">
+                        <a class="page-link" href="?page=1" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item {{ (page == 1) ? 'disabled' : '' }}">
+                        <a href="{{ (page > 1) ? '?page=' ~ (page - 1):'' }}" class="page-link">
+                            Previous
+                        </a>
+                    </li>
+                    {% for item in 1..(pages) %}
+                        <li class="page-item
+                         {{ (page == item) ? 'active' : '' }}
+                         ">
+                            <a class="page-link" href="?page={{ item }}"> {{item}} </a>
+                        </li>
+                    {% endfor %}
+                    <li class="page-item {{ (page == pages) ? 'disabled' : ''}}">
+                        <a href="?page={{ (page > pages) ? '?pages=' ~ (page + 1) : '' }}" class="page-link">
+                            Next
+                        </a>
+                    </li>
+                    <li class="page-item {{ (page == pages) ? 'disabled' : '' }}">
+                        <a class="page-link" href="?page={{ pages }}" aria-label="Previous">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+{% endblock %}

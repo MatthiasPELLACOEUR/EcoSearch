@@ -25,7 +25,7 @@
     <body>
     <!-- Header Section Start -->
     <header id="home" class="hero-area">
-      <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
+      <nav class="navbar navbar-expand-md bg-inverse bg-color scrolling-navbar">
         <div class="container">
           <a href=" {{path('main')}} " class="navbar-brand title-logo"><img src="{{absolute_url(asset("/assets/img/2.png"))}}" alt=""> EcoSearch</a>       
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,14 +34,14 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto w-100 justify-content-end">
               <li class="nav-item">
-                <a class="nav-link page-scroll" href=" {{path('main')}}">Actualities</a>
+                <a class="nav-link page-scroll" href=" {{path('posts_list')}}">Actualities</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link page-scroll" href=" ">My Recycle Center</a>
               </li>       
               
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="{{path('main')}}#contact">Contact</a>
+                <a class="nav-link page-scroll" href="{{path('contact')}}">Contact</a>
               </li> 
               {% if app.user %}
                 <li class="nav-item">
@@ -67,7 +67,7 @@
     </header>
     <!-- Header Section End --> 
 
-        {% block body %}{% endblock %}
+    {% block body %}{% endblock %}
 
 
     <!-- Go To Top Link -->

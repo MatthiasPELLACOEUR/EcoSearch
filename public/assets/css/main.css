@@ -15,18 +15,18 @@ Domain Path:      /languages/
    ========================================================================== */
 body {
   font-family: 'Rubik', sans-serif;
-  color: #a0a6ad;
+  color: black;
   font-size: 14px;
   font-weight: 400;
   background: #fff;
-  overflow-x: hidden; }
+  overflow-x: hidden;}
 
 html {
   overflow-x: hidden; }
 
 p {
   font-size: 14px;
-  color: #5e629c;
+  color: black;
   line-height: 26px;
   margin-bottom: 0; }
 
@@ -34,7 +34,7 @@ a:hover, a:focus {
   color: #000; }
 
 a {
-  color: #000;
+  color: rgb(0, 140, 255);
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -208,7 +208,7 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
   border-color: #3c96ff;
   border-style: solid;
   background: linear-gradient(to right, #3c96ff 0%, #2dfbff 100%);
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -217,14 +217,14 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
 
 .btn-apple i {
   background: linear-gradient(to right, #3c96ff 0%, #2dfbff 100%);
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent; }
 
 .btn-apple:hover,
 .btn-apple:active,
 .btn-apple:focus {
   background: linear-gradient(to right, #3c96ff 0%, #2dfbff 100%) !important;
-  -webkit-background-clip: text !important;
+  /* -webkit-background-clip: text !important; */
   -webkit-text-fill-color: transparent !important; }
 
 button:focus {
@@ -380,7 +380,7 @@ button:focus {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out; }
 
-.fixed-top {
+.bg-color {
   background: linear-gradient(95deg, #5533ff 40%, #25ddf5 100%) !important;
 }
 
@@ -1481,8 +1481,8 @@ button:focus {
   background: #F5F5F5; 
   padding: 2px 6px; }
 
-#actualities {
-  margin-top: 5%;
+.actualities {
+  margin-top: 2%;
 }
 
 .title-logo {
@@ -1493,8 +1493,8 @@ button:focus {
   color: #FFF;
 }
 
-.login, .register, .post-creation {
-  margin-top: 15%;
+.login, .register, .post-creation, .contact-form {
+  margin-top: 10%;
 }
 
 .remember-me {
@@ -1505,3 +1505,23 @@ button:focus {
   margin-top: 3%;
 }
 
+.label{
+  margin-bottom: 0;
+  margin-top: 1em;
+}
+
+.section-title {
+  margin-bottom: 2em!important;
+}
+
+.feature-info {
+  margin-top: 6em;
+}
+
+.card-body {
+  height: 300px;
+}
+
+/* .paginator {
+  margin-bottom: 5%;
+} */

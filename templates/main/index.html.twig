@@ -9,46 +9,22 @@
     {% endfor %}
 </div>
 
-    <section id="actualities">
+    <section>
       <div class="container">
         <h1>Actualities</h1>
         <div class="row row-cols-1 row-cols-md-2">
-        <div class="col-6 mb-4">
-            <div class="card">
-            <img src="{{absolute_url(asset('assets/img/contact/01.png'))}}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          {% for post in posts %}
+            <div class="col-6 mb-4">
+                <div class="card">
+                  {# <img src="{{ absolute_url(asset('assets/img/contact/01.png')) }}" class="card-img-top" alt="..."> #}
+                  <div class="card-body">
+                      <h6 class="card-title"> {{ post.title }} </h6>
+                      <p class="card-text"> {{ post.content }}... <p>
+                      <a href="#">lire plus</a>
+                  </div>
+                </div>
             </div>
-            </div>
-        </div>
-        <div class="col-6 mb-4">
-            <div class="card">
-            <img src="{{absolute_url(asset('assets/img/contact/01.png'))}}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            </div>
-        </div>
-        <div class="col-6 mb-4">
-            <div class="card">
-            <img src="{{absolute_url(asset('assets/img/contact/01.png'))}}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-            </div>
-            </div>
-        </div>
-        <div class="col-6 mb-4">
-            <div class="card">
-            <img src="{{absolute_url(asset('assets/img/contact/01.png'))}}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            </div>
-        </div>
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -59,55 +35,33 @@
       <div class="container">
         <!-- Start Row -->
         <div class="row">
-            
-        </div>
-        <div class="row">
           <div class="col-lg-12">
-          
             <div class="contact-text section-header "> 
               
               <div class="text-center">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="desc-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>  
-                  <p>eiusmod tempor incididunt ut labore et dolore.</p>
-                </div>
+                <h2 class="section-title">Contact Us</h2>
               </div>
               <div class="row">
-                <div class="col-lg-4 col-md-12">
+                <div class="col-4 offset-1">
                     <div class="contact-img">
-                        <img src="{{absolute_url(asset('assets/img/contact/01.png'))}}" class="img-fluid" alt="">
+                        <img src="{{ absolute_url(asset('assets/img/contact/01.png')) }}" class="img-fluid" alt="">
                     </div>
                 </div>
-                <div class="feature-info float-right">
-                 <h4>Premier Support</h4>
-                 <p>Producing long lasting organic SEO results for <br> brand of different kinds for more than a decade,<br> we understand that’s your.</p>
-                <div class="col-lg-4 col-md-12">
-                    <a class="btn btn-common" id="submit" 
-                    href="{{path('contact')}}"
+
+                <div class="col-6 offset-1">
+                  <div class="feature-info">
+                    <p>Vous voyez un soucis, une information fausse <br>ou vous avez une erreur. N'hésitez pas à nous contactez.</p>
+                    <a class="btn btn-common zozo" id="submit" 
+                    href="{{ path('contact') }}"
                     >Contactez-nous</a>
+                  </div>
                </div>
-                </div>
               </div>
             </div>
           </div>
-
-        </div>
-        <!-- End Row -->
-       </div>
-       </section>    
-          <!-- Start Col -->
-        
-          <!-- End Col -->
-          <!-- Start Col -->
-
-          <!-- End Col -->
-          <!-- Start Col -->
-          <div class="col-lg-1">
-          </div>
-          <!-- End Col -->
-
         </div>
         <!-- End Row -->
       </div>
+        <!-- Container End -->
+    </section>
 {% endblock %}

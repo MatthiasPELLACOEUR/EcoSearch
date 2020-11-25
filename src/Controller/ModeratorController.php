@@ -30,7 +30,8 @@ class ModeratorController extends AbstractController
    public function createPost(Request $request): Response
    {
         $post = new Posts;
-        
+        $post->setCreator($this->getUser());
+
         $form = $this->createForm(PostsType::class, $post);
 
         $form->handleRequest($request);
@@ -40,7 +41,7 @@ class ModeratorController extends AbstractController
             $em->persist($post);
             $em->flush();
 
-            return $this->redirectToRoute('moderator_home');
+            return $this->redirectToRoute('main');
         }
 
         return $this->render('moderator/posts/create.html.twig', [
