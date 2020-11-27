@@ -1,18 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tous nos articles - Ecosearch
-{% endblock %}
+{% block title %}Posts index{% endblock %}
 
 {% block body %}
 	<section class="actualities">
 		<div class="container">
 			<div class="row">
 				<h2 class="col-9 offset-2 text-center">Toutes nos actualités</h2>
+
+                {% if app.user.isModerator == 1 %}
+
+                    <a href="{{ path('posts_new') }}" class="offset-9 zozo">Créer un nouvel article</a>
+
+                {% endif %}
+
 				{% for post in posts %}
-					<div class="col-5 mb-3 offset-1">
-						<div
-							class="card">
-							{# <img src="{{ absolute_url(asset('assets/img/contact/01.png')) }}" class="card-img-top" alt="..."> #}
+					<div class="col-10 mb-3 offset-1">
+						<div class="card">
 							<div class="card-body">
 								<h6 class="card-title">
 									{{ post.title }}
@@ -20,7 +24,7 @@
 								<p class="card-text">
 									{{ post.content }}...</p>
 								<p>
-									<a href="#">lire plus</a>
+									<a href="{{ path('posts_show', {'id' : post.id})}}">lire plus</a>
 								</p>
 							</div>
 						</div>
@@ -43,8 +47,8 @@
 					</li>
 					{% for item in 1..(pages) %}
 						<li class="page-item
-								                         {{ (page == item) ? 'active' : '' }}
-								                         ">
+                            {{ (page == item) ? 'active' : '' }}
+                            ">
 							<a class="page-link" href="?page={{ item }}">
 								{{item}}
 							</a>
@@ -64,4 +68,5 @@
 			</nav>
 		</div>
 	</section>
+
 {% endblock %}

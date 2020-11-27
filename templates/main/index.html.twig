@@ -11,16 +11,15 @@
 
     <section>
       <div class="container">
-        <h1>Actualities</h1>
+        <h1>Actualités</h1>
         <div class="row row-cols-1 row-cols-md-2">
           {% for post in posts %}
             <div class="col-6 mb-4">
-                <div class="card">
-                  {# <img src="{{ absolute_url(asset('assets/img/contact/01.png')) }}" class="card-img-top" alt="..."> #}
+                <div class="card card-height-home">
                   <div class="card-body">
                       <h6 class="card-title"> {{ post.title }} </h6>
                       <p class="card-text"> {{ post.content }}... <p>
-                      <a href="#">lire plus</a>
+                      <a href="{{ path('posts_show', { 'id' : post.id }) }}">lire plus</a>
                   </div>
                 </div>
             </div>
@@ -39,7 +38,7 @@
             <div class="contact-text section-header "> 
               
               <div class="text-center">
-                <h2 class="section-title">Contact Us</h2>
+                <h2 class="section-title">Contactez-nous</h2>
               </div>
               <div class="row">
                 <div class="col-4 offset-1">

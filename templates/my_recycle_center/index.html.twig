@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My Recycle Center - EcoSearch{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ absolute_url(asset('/assets/css/my-recycle-center.css')) }}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <h3>Recherchez le centre de tri le plus proche de chez vous !</h3>
+        <input
+        id="pac-input"
+        class="controls"
+        type="text"
+        placeholder="Search Box"
+        {# value="recycle center" #}
+        />
+        <div id="map"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %} 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpOMrJVx49tkFhCFND4bsarPHxDJXj7os&callback=initAutocomplete&libraries=places&v=weekly"
+      defer
+    ></script>
+    <script src="{{ absolute_url(asset('/assets/js/my-recycle-center.js')) }}"></script>
+{% endblock %}
